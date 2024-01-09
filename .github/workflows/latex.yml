@@ -1,0 +1,24 @@
+name: Build and Publish LaTeX report
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up git repo
+        uses: actions/checkout@v3
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          working_directory: report
+          root_file: report.tex
+      - name: Upload compiled PDF file
+        uses: actions/upload-artifact@v3
+        with:
+          name: report
+          path: report/report.pdf

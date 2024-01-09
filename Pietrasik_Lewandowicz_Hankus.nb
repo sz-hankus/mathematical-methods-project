@@ -1,0 +1,150 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5380,        142]
+NotebookOptionsPosition[      4854,        124]
+NotebookOutlinePosition[      5300,        141]
+CellTagsIndexPosition[      5257,        138]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ StyleBox["Jakub Pietrasik, Bartosz Lewandowicz, Szymon Hankus\n",
+  FontWeight->"Bold"],
+ "Mathematical and computer modeling of various technical and scientific \
+problems - Final Project"
+}], "Title",
+ CellChangeTimes->{
+  3.905218780502674*^9, {3.905221800776299*^9, 3.9052218132884617`*^9}, {
+   3.9058243875779247`*^9, 3.905824387668181*^9}, {3.9063934668246117`*^9, 
+   3.906393466882111*^9}, {3.906986219878932*^9, 3.9069862199430037`*^9}, {
+   3.9077444597934504`*^9, 3.907744461444449*^9}, {3.90930220034792*^9, 
+   3.909302200381853*^9}, {3.909896336376264*^9, 3.909896336518347*^9}, {
+   3.9099143821971197`*^9, 3.909914382318204*^9}, {3.910963881362453*^9, 
+   3.9109638816591988`*^9}, {3.911810219333167*^9, 3.911810219452386*^9}, {
+   3.912761640522213*^9, 3.91276164056975*^9}, {3.913729801557219*^9, 
+   3.913729813747509*^9}},ExpressionUUID->"bdea77b4-2d96-4de3-be1f-\
+f157143ec1a4"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Lagrange", "[", "points_List", "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "w", ",", " ", "n", ",", "  ", "i", ",", " ", "phi", ",", " ", "k"}], 
+      "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"w", "=", " ", "0"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"n", " ", "=", " ", 
+       RowBox[{"Length", "[", "points", "]"}]}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"i", " ", "=", " ", "1"}], ",", " ", 
+        RowBox[{"i", " ", "<=", " ", "n"}], ",", " ", 
+        RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"phi", " ", "=", " ", "1"}], ";", "\[IndentingNewLine]", 
+         "\[IndentingNewLine]", 
+         RowBox[{"For", "[", 
+          RowBox[{
+           RowBox[{"k", " ", "=", " ", "1"}], ",", " ", 
+           RowBox[{"k", " ", "<=", " ", "n"}], ",", " ", 
+           RowBox[{"k", "++"}], ",", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"If", "[", 
+             RowBox[{
+              RowBox[{"k", "!=", "i"}], ",", " ", 
+              RowBox[{"phi", " ", "=", 
+               RowBox[{"phi", "*", " ", 
+                FractionBox[
+                 RowBox[{"x", "-", 
+                  RowBox[{"points", "\[LeftDoubleBracket]", 
+                   RowBox[{"k", ",", "1"}], "\[RightDoubleBracket]"}]}], 
+                 RowBox[{
+                  RowBox[{"points", "\[LeftDoubleBracket]", 
+                   RowBox[{"i", ",", "1"}], "\[RightDoubleBracket]"}], "-", 
+                  RowBox[{"points", "\[LeftDoubleBracket]", 
+                   RowBox[{"k", ",", "1"}], 
+                   "\[RightDoubleBracket]"}]}]]}]}]}], "]"}], ";"}]}], 
+          "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"w", "=", " ", 
+          RowBox[{"w", " ", "+", " ", 
+           RowBox[{
+            RowBox[{"points", "\[LeftDoubleBracket]", 
+             RowBox[{"i", ",", "2"}], "\[RightDoubleBracket]"}], "*", 
+            "phi"}]}]}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"Return", "[", "w", "]"}], ";"}]}], "\[IndentingNewLine]", 
+    "]"}]}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"points", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "4"}], "}"}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"10", ",", "4"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Show", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"Lagrange", "[", "points", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "10"}], "}"}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"ListPlot", "[", 
+    RowBox[{"points", ",", " ", 
+     RowBox[{"PlotStyle", "\[Rule]", "Red"}]}], "]"}]}], 
+  "\[IndentingNewLine]", "]"}]}], "Input",
+ CellChangeTimes->{{3.913729856573341*^9, 3.913729929414441*^9}, {
+  3.913729966479307*^9, 3.913730200808186*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"fa78799e-ff08-420b-bbac-b298b11c2760"]
+}, Open  ]]
+},
+WindowSize->{1280, 1006},
+WindowMargins->{{28, Automatic}, {Automatic, 132}},
+TaggingRules->Association["TryRealOnly" -> False],
+FrontEndVersion->"12.3 for Mac OS X ARM (64-bit) (July 9, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"46fc3f5e-2d11-4e23-9314-80b4d85a4011"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 917, 16, 354, "Title",ExpressionUUID->"bdea77b4-2d96-4de3-be1f-f157143ec1a4"],
+Cell[1500, 40, 3338, 81, 641, "Input",ExpressionUUID->"fa78799e-ff08-420b-bbac-b298b11c2760"]
+}, Open  ]]
+}
+]
+*)
+

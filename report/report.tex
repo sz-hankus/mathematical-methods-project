@@ -1,0 +1,136 @@
+\documentclass{MathematicaReport}
+
+% PACKAGES
+\usepackage{parskip}
+\usepackage{mathtools}
+
+\place{Gliwice}
+\date{\today}
+\tasknumber{1}
+\title{Comparative analysis of methods for approximating functions}
+\author{Jakub Pietrasik, Bartosz Lewandowicz, Szymon Hankus}
+\field{Informatics -- sem. V}
+
+
+\begin{document}
+\maketitle
+
+\section{Project objective}
+The goal of the project is to explain, present, and compare three methods of
+approximating functions either from a set of given points or by approximating
+the function itself. The methods that we chose are:
+\begin{enumerate}
+	\item Interpolation using Lagrange polynomials
+	\item Fourier series
+	\item Linear regression
+\end{enumerate}
+
+\section{Description} 
+\subsection{Lagrange polynomials}
+\textbf{Lagrange polynomials} are polynomials \( w(x) \) that interpolate a 
+given set of points
+\( P = \{ (x_0, y_0)\)\(,\ (x_1, y_1)\)\(,\ldots\) \(,\ (x_n, y_n) \} \)
+Which means that they satisfy the following condition:
+
+\[
+	\forall_{(x_i, y_i) \in P}\ w(x_i) = y_i
+\]
+
+In other words, when a polynomial \textbf{interpolates} the dataset, it passes 
+through all of the points in said dataset.
+The Lagrange interpolating polynomial is the unique polynomial of lowest degree 
+that interpolates a given set of data
+
+Langrage polynomials for a given set of data are calculated using the following
+formula
+\[
+	w(x) = \sum_{i=0}^n y_i \cdot \prod_{\begin{smallmatrix}0\le j\le n\\ j\neq i\end{smallmatrix}}
+	 \frac{x-x_j}{x_i-x_j}
+\]
+
+In this section, I would like to demonstrate how this formula can be obtained
+and that it is actually quite straightforward and intuitive.
+
+\subsection{How to arrive at the formula for Lagrange polynomials?}
+This formula might seem daunting at first, but let us first consider a
+polynomial \( w_i(x) \) that \textbf{goes through only one point \( (x_i, y_i) \) 
+and is equal to 0 for the rest of the points}.
+
+% If we find such polynomial for each point in the data set and add them together
+% we'll be left with a Lagrange polynomial
+
+\begin{enumerate}
+	\item For a given pair \( (x_i, y_i) \), it has to be equal to \( y_i \) 
+	\item For each pair \( (x_j, y_j) \) other than \( (x_i, y_i) \), it has to
+	be equal to 0
+\end{enumerate}
+
+Let's start with condition no. 2. It tells us that the polynomial \( w(x) \)
+should be equal to 0 for all \( x_j \) inputs, that are not \( x_i \). That is
+actually quite simple -- all we have to do is construct a polynomial in
+factored form with the roots being all the \( x_j \) values other than \( x_i \).
+\[
+	w_i(x) = \prod_{\begin{smallmatrix}0\le j\le n\\ j\neq i\end{smallmatrix}} (x-x_j)
+\]
+
+Let's now consider a simplified condition no. 1 -- let's find a polynomial that is
+equal to 1 for \( (x_i, x_i) \), but also satisfies condition no. 2. That is
+actually also very simple -- we just have to divide the polynomial that we have 
+already constructed by \((x_i - x_j)\)
+\[
+	w_i(x) = \prod_{\begin{smallmatrix}0\le j\le n\\ j\neq i\end{smallmatrix}} \frac{(x - x_j)}{(x_i - x_j)}
+\]
+Now,
+\[
+	w_i(x_i) = \prod_{\begin{smallmatrix}0\le j\le n\\ j\neq i\end{smallmatrix}} \frac{(x_i - x_j)}{(x_i - x_j)} = 1
+\]
+In order for the polynomial to satsify cond. no. 1, all we have to do is 
+multiply it by \( y_i \)
+\[
+	w_i(x) = y_i \prod_{\begin{smallmatrix}0\le j\le n\\ j\neq i\end{smallmatrix}} \frac{(x - x_j)}{(x_i - x_j)}
+\]
+Condition no. 1 is satisfied,
+\[
+	w_i(x_i) = y_i \prod_{\begin{smallmatrix}0\le j\le n\\ j\neq i\end{smallmatrix}} \frac{(x_i - x_j)}{(x_i - x_j)} = y_i \cdot 1 = y_i
+\]
+
+Since both of the conditions are satisfied, \( w_i(x) \) interpolates one point
+-- \( (x_i, y_i) \) and is equal to 0 for all the other points in the dataset. 
+
+Below is a sample dataset comprising three points 
+\( (x_1, y_1), (x_2, y_2), (x_3, y_3) \) and the values that polynomials \(w_i\)
+take for each of them.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{c|ccc}
+			      & \( x_2 \) & \( x_2 \) & \( x_3 \)\\ \hline
+        \( w_1 \) & \( y_2 \) & \(  0  \) & \(  0  \)\\ 
+        \( w_2 \) & \(  0  \) & \( y_2 \) & \(  0  \)\\ 
+        \( w_3 \) & \(  0  \) & \(  0  \) & \( y_3 \)\\ 
+    \end{tabular}
+\end{table}
+
+To find a polynomial that interpolates all of the points, we simply create
+\( w_i(x) \) for every point and add them together.
+
+\[
+	w(x) = \sum_{i = 0}^n w_i(x)
+\]
+
+Which expands to	
+\[
+	w(x) = \sum_{i=0}^n y_i \cdot \prod_{\begin{smallmatrix}0\le j\le n\\ j\neq i\end{smallmatrix}}
+	 \frac{x-x_j}{x_i-x_j}
+\]
+
+We have arrived at the exact formula for Lagrange polynomials.
+
+
+\section*{Enclosures} 
+\begin{itemize}
+	\item File with the program (\texttt{Pietrasik\_Lewandowicz\_Hankus.nb})
+\end{itemize}
+
+
+\end{document}

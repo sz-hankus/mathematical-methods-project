@@ -4,6 +4,8 @@
 \usepackage{parskip}
 \usepackage{mathtools}
 \usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
 
 \place{Gliwice}
 \date{\today}
@@ -178,6 +180,34 @@ Similarly, three points will yield a quadratic (parabolic) function.
 \section{Fourier series}
 
 \section{The least squares method}
+\textbf{The least squares fitting method} is a widely used technique in statistical
+analysis and regression modeling. It aims to find the best-fitting line or curve
+for a set of data points by minimizing the sum of the squares of the
+vertical distances (residuals) between the data points in the set and the
+corresponding points on the fitted line or curve. 
+
+\subsection{How to fit a line to a set of points?}
+When trying to find the line of best fit for a given data set, we will be using
+a linear function \( f(x) = ax + b \)  as a basis for the least squares method.
+
+Let's imagine that we are looking for a line \( f(x) = ax + b \) that best fits 
+a set of points : \( \{(x_1,y_1), (x_2,y_2),\ldots,(x_n,y_n)\} \). 
+In order to measure how much the line deviates from the points, we can introduce
+residuals (vertical distances) \( \xi_i = | f(x_i) - y_i |  \). 
+
+The problem of finding that line boils down to minimising the sum of the 
+squares of the residuals.
+
+\subsection{Fitting a line}
+Let's imagine that we are looking for a line \( f(x) = ax + b \) that best fits 
+a set of points : \( \{(0,1), (3,1), (4,5)\} \). In order to find this line,
+we have to find a formula for the squares of the residuals and minimize it.
+
+Geometrically, it presents as follows:
+\begin{center}
+	\input{illustrations/tikz_least_squares.tex}
+\end{center}
+
 
 \section{Summary}
 

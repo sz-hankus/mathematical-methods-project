@@ -1,0 +1,23 @@
+\begin{tikzpicture}
+% Axes
+\draw[-latex] (-1,0) -- (5,0) node [pos=0.98, below] {x};    
+\draw[-latex] (0,-1) -- (0,5) node [pos=0.98, left] {y};    
+
+\draw (0,0.1)--(0,-0.2) node [left] {0};
+
+% Points
+\filldraw (0,1) circle[radius=1.5pt] node [above] {\((0,1)\)};
+\filldraw (3,1) circle[radius=1.5pt] node [below] {\((3,1)\)};
+\filldraw (4,5) circle[radius=1.5pt] node [right] {\((4,5)\)};
+
+\draw[-latex] (0,-1) -- (0,5) node [pos=0.98, left] {y};
+\draw[-latex] (0,-1) -- (0,5) node [pos=0.98, left] {y};
+
+% squares
+\draw[pattern=north west lines, pattern color=blue] (0,1) rectangle (-0.5,0.5);
+\draw[pattern=north west lines, pattern color=blue] (3,1) rectangle (4.9,2.9);
+\draw[pattern=north west lines, pattern color=blue] (4,5) rectangle (2.7,3.7);
+
+% Line of best fit
+\draw [dotted, thick] (-1, -0.3) -- (5,4.5);
+\end{tikzpicture}

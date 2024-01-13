@@ -3,6 +3,7 @@
 % PACKAGES
 \usepackage{parskip}
 \usepackage{mathtools}
+\usepackage{float}
 
 \place{Gliwice}
 \date{\today}
@@ -48,16 +49,13 @@ formula
 	 \frac{x-x_j}{x_i-x_j}
 \]
 
-In this section, I would like to demonstrate how this formula can be obtained
-and that it is actually quite straightforward and intuitive.
+In the next section, I would like to demonstrate how this formula can be
+obtained and that it is actually quite straightforward and intuitive.
 
 \subsection{How to arrive at the formula for Lagrange polynomials?}
 This formula might seem daunting at first, but let us first consider a
 polynomial \( w_i(x) \) that \textbf{goes through only one point \( (x_i, y_i) \) 
 and is equal to 0 for the rest of the points}.
-
-% If we find such polynomial for each point in the data set and add them together
-% we'll be left with a Lagrange polynomial
 
 \begin{enumerate}
 	\item For a given pair \( (x_i, y_i) \), it has to be equal to \( y_i \) 
@@ -112,7 +110,7 @@ take for each of them.
 \end{table}
 
 To find a polynomial that interpolates all of the points, we simply create
-\( w_i(x) \) for every point and add them together.
+\( w_i(x) \) for every point and take their sum.
 
 \[
 	w(x) = \sum_{i = 0}^n w_i(x)
@@ -126,10 +124,56 @@ Which expands to
 
 We have arrived at the exact formula for Lagrange polynomials.
 
-% TODO
+
 \subsection{Examples}
+Let us consider a very simple set of four points
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{images/lagrange_example1.png}
+\end{figure}
+
+Now, let's use the \texttt{Langrage} module that we have written, and create 
+a Lagrange polynomial interpolating the above-mentioned set of points.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{images/lagrange_example2.png}
+\end{figure}
+
+As was previously mentioned, the Lagrange interpolating polynomial is a 
+polynomial the of lowest degree that interpolates a given set of data. Thus,
+feeding two points into our module will yield a linear function that 
+interpolates these points.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{images/lagrange_example3.png}
+\end{figure}
+
+Similarly, three points will yield a quadratic (parabolic) function.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{images/lagrange_example4.png}
+\end{figure}
+
 
 \subsection{Pros and cons of using Lagrange polynomials for approximation}
+
+\textsc{Pros}
+\begin{itemize}
+	\item The function goes exactly through the set of points given as the input,
+	\item The formula is quite easy to understand, as I tried to demonstrate in
+		section 2.2,
+	\item Even when the points are not evenly spaced, it can be used to find the 
+		interpolating function.
+\end{itemize}
+
+\textsc{Cons}
+\begin{itemize}
+	\item As new points are added to the dataset, the function quickly becomes
+		computationally complex,
+	\item Unsuitable for cases where the general shape of the function is known
+		e.g. when we know the function we are looking for should be roughly
+		logarithmic, it's better to use the least-squares function approximation
+\end{itemize}
 
 
 \section*{Enclosures} 

@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     15185,        392]
-NotebookOptionsPosition[     14378,        371]
-NotebookOutlinePosition[     14821,        388]
-CellTagsIndexPosition[     14778,        385]
+NotebookDataLength[     19009,        484]
+NotebookOptionsPosition[     18011,        461]
+NotebookOutlinePosition[     18454,        478]
+CellTagsIndexPosition[     18411,        475]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -366,7 +366,97 @@ Cell[BoxData[{
    3.91421997641049*^9}, {3.9142270888271437`*^9, 3.914227090559383*^9}, 
    3.914243151041482*^9, 
    3.91424319713879*^9},ExpressionUUID->"7a0f75cd-88aa-4f9d-8863-\
-bb9935aa3ff5"]
+bb9935aa3ff5"],
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{"The", " ", "least", " ", "squares", " ", "method"}], 
+  "Subtitle"]], "Input",
+ CellChangeTimes->{{3.914243181187442*^9, 3.9142431868597937`*^9}, {
+  3.914243257892627*^9, 
+  3.914243267339924*^9}},ExpressionUUID->"666433c1-75c0-4f68-8ef7-\
+13f75a10bb9b"],
+
+Cell[BoxData[
+ RowBox[{"DynamicModule", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"points", "=", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"1.3", ",", "2.2"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"2.7", ",", "3.5"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"3.2", ",", "5.8"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"4.5", ",", "6.7"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"5.9", ",", "9.2"}], "}"}]}], "}"}]}], ",", " ", 
+     RowBox[{"basis", "=", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", 
+        RowBox[{"x", "^", "2"}]}], "}"}]}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"Panel", "[", "\[IndentingNewLine]", 
+    RowBox[{"Column", "[", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Grid", "[", 
+        RowBox[{
+         RowBox[{"{", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"TextCell", "[", "\"\<Points\>\"", "]"}], ",", 
+             RowBox[{"InputField", "[", 
+              RowBox[{"Dynamic", "[", "points", "]"}], "]"}]}], "}"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"TextCell", "[", "\"\<Basis\>\"", "]"}], ",", 
+             RowBox[{"InputField", "[", 
+              RowBox[{"Dynamic", "[", "basis", "]"}], "]"}]}], "}"}]}], 
+          "\[IndentingNewLine]", "}"}], ",", " ", 
+         RowBox[{"Frame", "->", "All"}]}], "]"}], ",", "\[IndentingNewLine]", 
+       
+       RowBox[{"Spacer", "[", "10", "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Dynamic", "[", "\[IndentingNewLine]", 
+        RowBox[{"Show", "[", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"Plot", "[", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Fit", "[", 
+              RowBox[{"points", ",", " ", "basis", ",", " ", "x"}], "]"}], 
+             " ", "/.", " ", 
+             RowBox[{"x", "->", " ", "xv"}]}], ",", "\[IndentingNewLine]", 
+            RowBox[{"{", 
+             RowBox[{"xv", ",", 
+              RowBox[{"1.5", "*", 
+               RowBox[{"Min", "[", 
+                RowBox[{"points", "\[LeftDoubleBracket]", 
+                 RowBox[{"All", ",", "1"}], "\[RightDoubleBracket]"}], 
+                "]"}]}], ",", 
+              RowBox[{"1.5", "*", 
+               RowBox[{"Max", "[", 
+                RowBox[{"points", "\[LeftDoubleBracket]", 
+                 RowBox[{"All", ",", "1"}], "\[RightDoubleBracket]"}], 
+                "]"}]}]}], "}"}], ",", "\[IndentingNewLine]", 
+            RowBox[{"PlotRange", "\[Rule]", "Full"}]}], "\[IndentingNewLine]",
+            "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"ListPlot", "[", 
+           RowBox[{"points", ",", " ", 
+            RowBox[{"PlotStyle", "\[Rule]", "Red"}]}], "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"ImageSize", "->", " ", "Medium"}]}], "\[IndentingNewLine]",
+          "]"}], "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "}"}],
+      "]"}], "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.914243293531209*^9, 3.9142433655665493`*^9}},
+ CellLabel->"In[25]:=",ExpressionUUID->"b936fa72-af8a-4043-a605-0b06636af0bb"]
 }, Open  ]]
 },
 WindowSize->{1582, 1188},
@@ -392,7 +482,9 @@ Cell[580, 22, 917, 16, 277, "Title",ExpressionUUID->"bdea77b4-2d96-4de3-be1f-f15
 Cell[1500, 40, 242, 6, 54, "Input",ExpressionUUID->"a17b6664-bf39-449f-b773-814565973648"],
 Cell[1745, 48, 5473, 124, 1083, "Input",ExpressionUUID->"fa78799e-ff08-420b-bbac-b298b11c2760"],
 Cell[7221, 174, 213, 5, 54, "Input",ExpressionUUID->"aaa41f93-fe37-4e2f-a710-a172dbac8b77"],
-Cell[7437, 181, 6925, 187, 558, "Input",ExpressionUUID->"7a0f75cd-88aa-4f9d-8863-bb9935aa3ff5"]
+Cell[7437, 181, 6925, 187, 558, "Input",ExpressionUUID->"7a0f75cd-88aa-4f9d-8863-bb9935aa3ff5"],
+Cell[14365, 370, 291, 7, 54, "Input",ExpressionUUID->"666433c1-75c0-4f68-8ef7-13f75a10bb9b"],
+Cell[14659, 379, 3336, 79, 584, "Input",ExpressionUUID->"b936fa72-af8a-4043-a605-0b06636af0bb"]
 }, Open  ]]
 }
 ]

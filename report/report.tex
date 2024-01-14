@@ -176,8 +176,56 @@ Similarly, three points will yield a quadratic (parabolic) function.
 		logarithmic, it's better to use the least-squares function approximation
 \end{itemize}
 
-% TODO:
 \section{Fourier series}
+Fourier series is a powerful mathematical tool used to represent periodic functions as a sum of sine and cosine functions. Named after the French mathematician Joseph Fourier, who introduced the concept in the 19th century, Fourier series find applications in various scientific and engineering domains, particularly in the analysis of periodic signals such as sound waves and electrical signals. \\
+
+For a periodic function \(f(t)\) with period \(L\), the Fourier series is given by:
+
+\begin{equation*}
+f(t) = a_0 + \sum_{n=1}^{\infty} \left( a_n \cos\left(\frac{2\pi nt}{L}\right) + b_n \sin\left(\frac{2\pi nt}{L}\right) \right)
+\end{equation*}
+
+The coefficients \(a_0\), \(a_n\), and \(b_n\) are determined by the following integrals:
+
+\begin{equation*}
+a_0 = \frac{1}{L} \int_{0}^{L} f(t) \, dt
+\end{equation*}
+
+\begin{equation*}
+a_n = \frac{2}{L} \int_{0}^{L} f(t) \cos\left(\frac{2\pi nt}{L}\right) \, dt
+\end{equation*}
+
+\begin{equation*}
+b_n = \frac{2}{L} \int_{0}^{L} f(t) \sin\left(\frac{2\pi nt}{L}\right) \, dt
+\end{equation*}
+
+These coefficients represent the amplitudes of the different sine and cosine components in the Fourier series. The term \(\frac{2\pi nt}{L}\) in the trigonometric functions ensures that the series captures the periodic nature of the function.
+
+\textbf{Example of using Fourier Series to approximate a function:}
+
+What will be the Fourier series of the function $f(x)=1-x^2$ in the interval $[-1,1]$? \\
+
+Given,
+\[ f(x) = 1 - x^2, \quad [-1, 1] \]
+
+The Fourier series of the function \( f(x) \) in the interval \([-L, L]\), i.e. \(-L \leq x \leq L\), is written as:
+\[ f(x) = A_0 + \sum_{n=1}^{\infty} A_n \cos\left(\frac{n\pi x}{L}\right) + \sum_{n=1}^{\infty} B_n \sin\left(\frac{n\pi x}{L}\right) \]
+
+Here,
+\[ A_0 = \frac{1}{2L} \int_{-L}^{L} f(x) \,dx \]
+\[ A_n = \frac{1}{L} \int_{-L}^{L} f(x) \cos\left(\frac{n\pi x}{L}\right) \,dx, \quad n > 0 \]
+\[ B_n = \frac{1}{L} \int_{-L}^{L} f(x) \sin\left(\frac{n\pi x}{L}\right) \,dx, \quad n > 0 \]
+
+Now, by applying the formula for \( f(x) \) in the interval \([-1, 1]\):
+\[ f(x) = \frac{1}{2} \cdot 1 \cdot \int_{-1}^{1} (1 - x^2) \,dx + \sum_{n=1}^{\infty} \frac{1}{1} \int_{-1}^{1} (1 - x^2) \cos(n\pi x) \,dx \cdot \cos(n\pi x) \]
+\[ + \sum_{n=1}^{\infty} \frac{1}{1} \int_{-1}^{1} (1 - x^2) \sin(n\pi x) \,dx \cdot \sin(n\pi x) \]
+
+Now simplifying the definite integrals,
+\[ = \frac{1}{2} \cdot \frac{4}{3} + \sum_{n=1}^{\infty} \frac{-4(-1)^n\pi^2n^2}{n^2\pi^2} \cos(n\pi x) + \sum_{n=1}^{\infty} 0 \cdot \sin(n\pi x) \]
+\[ = \frac{2}{3} + \sum_{n=1}^{\infty} \frac{4(-1)^n}{n^2} \cos(n\pi x) \]
+
+Thus, the Fourier series of the function $f(x)=1-x^2$ in the interval 
+$[-1,1]$ is: $\frac{2}{3} + \sum_{n=1}^{\infty} \frac{4(-1)^n}{n^2} \cos(n\pi x)$
 
 \section{The least squares method}
 \textbf{The least squares fitting method} is a widely used technique in statistical

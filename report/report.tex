@@ -195,7 +195,7 @@ a set of points : \( \{(x_1,y_1), (x_2,y_2),\ldots,(x_n,y_n)\} \).
 In order to measure how much the line deviates from the points, we can introduce
 residuals (vertical distances) \( \xi_i = | f(x_i) - y_i |  \). 
 
-The problem of finding that line boils down to minimising the sum of the 
+The problem of finding that line boils down to minimizing the sum of the 
 squares of the residuals.
 
 \subsection{Geometric interpretation}
@@ -210,6 +210,46 @@ Geometrically, it presents as follows:
 The distance in the vertical direction between the point and the line is the 
 residual \( \xi \) of that point. The squares represent \( \xi^2 \) -- which is
 the parameter that we're trying to minimize.
+
+\subsection{The optimization problem}
+The parameter that we're trying to minimize (optimize) is the sum of the squares
+of the residuals \( R^2 = \sum_{i=1}^{n} \xi_i^2 \) with respect to the parameters of 
+the linear function \( a, b \).
+
+\[
+	R^2 = \sum_{i=1}^{n} \xi_i^2 = \sum_{i=1}^{n} \left[ y_i - (ax_i + b) \right]^2
+\]
+
+The condition for \( R^2 \) to be a minimum is that the derivatives of \( R^2 \)
+with respect to \( a \) and \( b \) are both equal to zero.
+\begin{equation*}
+	\begin{aligned}
+		\frac{\partial R^2}{\partial a} & = -2\sum_{i=1}^n x_i[y_i-(ax_i+b)] = 0 \\
+		\frac{\partial R^2}{\partial b} & = -2\sum_{i=1}^n [y_i-(ax_i+b)] = 0 \\
+	\end{aligned}
+\end{equation*}
+
+Which we can quickly verify with Wolfram Mathematica
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{images/least_squares_derivatives.png}
+\end{figure}
+
+This leads to the equations
+\begin{equation*}
+	\begin{aligned}
+		na + b \sum_{i=1}^{n} x_i	= & \sum_{i=1}^{n} y_i \\
+		a \sum_{i=1}^{n} x_i + b \sum_{i=1}^{n} x_i^2 = & \sum_{i=1}^{n} x_i y_i
+	\end{aligned}
+\end{equation*}
+
+Which ultimately leads to the solution for \( a \) and \( b \)
+\begin{equation*}
+	\begin{aligned}
+	a & = \frac{\sum_{i=1}^{n}y_i\sum_{i=1}^{n}x_i^2-\sum_{i=1}^{n}x_i\sum_{i=1}^{n}x_iy_i}{n\sum_{i=1}^{n}x_i^2-(\sum_{i=1}^{n}x_i)^2} \\
+	b & = \frac{n\sum_{i=1}^{n}x_iy_i-\sum_{i=1}^{n}x_i\sum_{i=1}^{n}y_i}{n\sum_{i=1}^{n}x_i^2-(\sum_{i=1}^{n}x_i)^2}
+	\end{aligned}
+\end{equation*}
 
 
 \section{Summary}

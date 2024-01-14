@@ -177,6 +177,28 @@ Similarly, three points will yield a quadratic (parabolic) function.
 		logarithmic, it's better to use the least-squares function approximation
 \end{itemize}
 
+\subsection{Usage of Lagrange interpolation in practice}
+\begin{enumerate}[label=\arabic*.]
+    \item \textbf{Numerical Analysis:}
+    \begin{itemize}
+        \item \textbf{Root Finding:} Lagrange interpolation can be utilized to approximate the roots of a function by interpolating a set of points around the root region.
+        \item \textbf{Differential Equations:} It is employed in the numerical solution of differential equations, where interpolated points aid in approximating the solutions.
+    \end{itemize}
+    
+    \item \textbf{Computer Graphics:}
+    \begin{itemize}
+        \item \textbf{Curve Fitting:} Lagrange interpolation is often used for curve fitting in computer graphics to smoothly connect a set of control points, resulting in aesthetically pleasing curves.
+        \item \textbf{Geometric Modeling:} In 3D computer graphics, Lagrange interpolation can be applied for surface representation by interpolating points on a mesh.
+    \end{itemize}
+    
+    \item \textbf{Signal Processing:}
+    \begin{itemize}
+        \item \textbf{Audio Processing:} Lagrange interpolation plays a role in audio signal processing for tasks such as resampling and interpolation to achieve a smoother representation of the signal.
+        \item \textbf{Image Processing:} In image processing, Lagrange interpolation is employed for resizing images, where it helps in estimating pixel values between known data points.
+    \end{itemize}
+    
+\end{enumerate}
+
 \section{Fourier series}
 Fourier series is a powerful mathematical tool used to represent periodic
 functions as a sum of sine and cosine functions. Named after the French
@@ -378,6 +400,36 @@ Which ultimately leads to the solution for \( a \) and \( b \)
 \caption{A parabolic function fit to the dataset}
 \end{figure}
 
+\newpage
+\subsection{Usage of method of least squares in practice}
+
+\begin{enumerate}[label=\arabic*.]
+    \item \textbf{Regression Analysis:}
+    \begin{itemize}
+        \item \textbf{Linear Regression:} The method of least squares is widely used in regression analysis to fit a linear model to observed data, minimizing the sum of squared differences between observed and predicted values.
+        \item \textbf{Nonlinear Regression:} It is also applied in nonlinear regression, where the relationship between variables is modeled with a nonlinear function, and the least squares method minimizes the residuals.
+    \end{itemize}
+    
+    \item \textbf{Curve Fitting:}
+    \begin{itemize}
+        \item \textbf{Polynomial Curve Fitting:} The method of least squares is employed to fit polynomial curves to data points, providing a flexible approach to approximate complex relationships.
+        \item \textbf{Exponential and Power Curve Fitting:} It is used for fitting exponential and power-law curves to experimental data in various scientific disciplines.
+    \end{itemize}
+    
+    \item \textbf{Signal Processing:}
+    \begin{itemize}
+        \item \textbf{Filter Design:} In signal processing, the least squares method is utilized for designing digital filters that minimize the difference between the desired and actual frequency responses.
+        \item \textbf{System Identification:} It plays a crucial role in system identification, where mathematical models are fitted to observed input-output data of dynamic systems.
+    \end{itemize}
+    
+    \item \textbf{Financial Modeling:}
+    \begin{itemize}
+        \item \textbf{Portfolio Optimization:} The method of least squares is applied in finance for optimizing investment portfolios by minimizing the difference between expected and actual returns.
+        \item \textbf{Option Pricing:} It is used in option pricing models to fit volatility surfaces based on market data.
+    \end{itemize}
+    
+\end{enumerate}
+
 \subsection{Pros and cons of using the least squares method for function approximation}
 
 \textsc{Pros}
@@ -397,8 +449,10 @@ Which ultimately leads to the solution for \( a \) and \( b \)
 		as the rest.
 \end{itemize}
 
-
 \section{Summary}
+
+The comparative analysis provides insights into the strengths and weaknesses of each method. Lagrange polynomials offer exact interpolation, Fourier series excel in periodic function representation, and the least squares method provides versatility for fitting lines or curves to data points. We have summarized all pros and cons of each method in details in above sections, helping practitioners make informed decisions based on their specific requirements. The documentation includes a file with the program for further exploration.
+
 
 \section*{Enclosures} 
 \begin{itemize}

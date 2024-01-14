@@ -5,6 +5,7 @@
 \usepackage{mathtools}
 \usepackage{float}
 \usepackage{tikz}
+\usepackage{enumitem}
 \usetikzlibrary{patterns}
 
 \place{Gliwice}
@@ -200,7 +201,7 @@ b_n = \frac{2}{L} \int_{0}^{L} f(t) \sin\left(\frac{2\pi nt}{L}\right) \, dt
 \end{equation*}
 
 These coefficients represent the amplitudes of the different sine and cosine components in the Fourier series. The term \(\frac{2\pi nt}{L}\) in the trigonometric functions ensures that the series captures the periodic nature of the function.
-
+tłu
 \textbf{Example of using Fourier Series to approximate a function:}
 
 What will be the Fourier series of the function $f(x)=1-x^2$ in the interval $[-1,1]$? \\
@@ -226,6 +227,46 @@ Now simplifying the definite integrals,
 
 Thus, the Fourier series of the function $f(x)=1-x^2$ in the interval 
 $[-1,1]$ is: $\frac{2}{3} + \sum_{n=1}^{\infty} \frac{4(-1)^n}{n^2} \cos(n\pi x)$
+
+\subsection{Real-life Applications of Fourier Series}
+
+\begin{enumerate}[label=\arabic*.]
+    \item \textbf{Audio Processing:}
+    \begin{itemize}
+        \item \textbf{Music Compression:} Fourier series is used in audio compression algorithms (like MP3) for efficient representation and compression of audio signals.
+    \end{itemize}
+    
+    \item \textbf{Telecommunications:}
+    \begin{itemize}
+        \item \textbf{Signal Transmission:} Fourier series is used in techniques like Frequency Division Multiplexing (FDM) to transmit multiple signals simultaneously over a communication channel.
+    \end{itemize}
+    
+    \item \textbf{Electrical Engineering:}
+    \begin{itemize}
+        \item \textbf{Power Systems:} Fourier series is employed in power systems analysis to study periodic waveforms and analyze harmonic content in AC circuits.
+    \end{itemize}
+    
+    \item \textbf{Image Processing:}
+    \begin{itemize}
+        \item \textbf{Image Compression:} Fourier series is used in image compression algorithms (like JPEG) for efficient representation and compression of images.
+    \end{itemize}
+    
+    \item \textbf{Physics:}
+    \begin{itemize}
+        \item \textbf{Wave Analysis:} Fourier series is used in physics to analyze and describe periodic phenomena, such as the vibration of strings or the behavior of waves.
+    \end{itemize}
+    
+    \item \textbf{Medical Imaging:}
+    \begin{itemize}
+        \item \textbf{MRI (Magnetic Resonance Imaging):} Fourier Transform techniques, related to Fourier series, are fundamental in MRI for data transformation and image reconstruction.
+    \end{itemize}
+    
+    \item \textbf{Chemistry:}
+    \begin{itemize}
+        \item \textbf{Spectroscopy:} Fourier Transform Infrared (FTIR) spectroscopy uses techniques related to Fourier series for the analysis of molecular absorption and emission of light.
+    \end{itemize}
+\end{enumerate}
+
 
 \section{The least squares method}
 \textbf{The least squares fitting method} is a widely used technique in statistical

@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     14267,        369]
-NotebookOptionsPosition[     13645,        350]
-NotebookOutlinePosition[     14088,        367]
-CellTagsIndexPosition[     14045,        364]
+NotebookDataLength[     14507,        373]
+NotebookOptionsPosition[     13885,        354]
+NotebookOutlinePosition[     14328,        371]
+CellTagsIndexPosition[     14285,        368]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -144,6 +144,10 @@ Cell[BoxData[{
                 RowBox[{"points", "\[LeftDoubleBracket]", 
                  RowBox[{"All", ",", "1"}], "\[RightDoubleBracket]"}], 
                 "]"}]}]}], "}"}], ",", "\[IndentingNewLine]", 
+            RowBox[{"PlotLabel", "\[Rule]", 
+             RowBox[{"Simplify", "[", 
+              RowBox[{"Lagrange", "[", "points", "]"}], "]"}]}], ",", 
+            "\[IndentingNewLine]", 
             RowBox[{"PlotRange", "\[Rule]", "Full"}]}], "\[IndentingNewLine]",
             "]"}], ",", "\[IndentingNewLine]", 
           RowBox[{"ListPlot", "[", 
@@ -157,8 +161,8 @@ Cell[BoxData[{
  CellChangeTimes->{{3.913729856573341*^9, 3.913729929414441*^9}, {
    3.913729966479307*^9, 3.913730200808186*^9}, {3.9142143906595154`*^9, 
    3.9142144383767095`*^9}, 3.914230842062633*^9, {3.9142308763500013`*^9, 
-   3.914230898745372*^9}},
- CellLabel->"In[10]:=",ExpressionUUID->"fa78799e-ff08-420b-bbac-b298b11c2760"],
+   3.914230898745372*^9}, {3.9142310935837317`*^9, 3.9142311313461647`*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"fa78799e-ff08-420b-bbac-b298b11c2760"],
 
 Cell[BoxData[{
  RowBox[{
@@ -368,8 +372,8 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 917, 16, 277, "Title",ExpressionUUID->"bdea77b4-2d96-4de3-be1f-f157143ec1a4"],
-Cell[1500, 40, 5233, 120, 1057, "Input",ExpressionUUID->"fa78799e-ff08-420b-bbac-b298b11c2760"],
-Cell[6736, 162, 6893, 185, 558, "Input",ExpressionUUID->"7a0f75cd-88aa-4f9d-8863-bb9935aa3ff5"]
+Cell[1500, 40, 5473, 124, 1083, "Input",ExpressionUUID->"fa78799e-ff08-420b-bbac-b298b11c2760"],
+Cell[6976, 166, 6893, 185, 558, "Input",ExpressionUUID->"7a0f75cd-88aa-4f9d-8863-bb9935aa3ff5"]
 }, Open  ]]
 }
 ]

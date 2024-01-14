@@ -198,7 +198,7 @@ residuals (vertical distances) \( \xi_i = | f(x_i) - y_i |  \).
 The problem of finding that line boils down to minimising the sum of the 
 squares of the residuals.
 
-\subsection{Fitting a line}
+\subsection{Geometric interpretation}
 Let's imagine that we are looking for a line \( f(x) = ax + b \) that best fits 
 a set of points : \( \{(0,1), (3,1), (4,5)\} \). In order to find this line,
 we have to find a formula for the squares of the residuals and minimize it.
@@ -207,6 +207,9 @@ Geometrically, it presents as follows:
 \begin{center}
 	\input{illustrations/tikz_least_squares.tex}
 \end{center}
+The distance in the vertical direction between the point and the line is the 
+residual \( \xi \) of that point. The squares represent \( \xi^2 \) -- which is
+the parameter that we're trying to minimize.
 
 
 \section{Summary}

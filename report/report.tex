@@ -157,7 +157,7 @@ Similarly, three points will yield a quadratic (parabolic) function.
 \end{figure}
 
 
-\subsection{Pros and cons of using Lagrange polynomials for approximation}
+\subsection{Pros and cons of using Lagrange polynomials for function approximation}
 
 \textsc{Pros}
 \begin{itemize}
@@ -393,6 +393,7 @@ Which ultimately leads to the solution for \( a \) and \( b \)
 \caption{A linear function fit to the dataset}
 \end{figure}
 
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{images/least_squares_example2.png}
@@ -428,6 +429,25 @@ Which ultimately leads to the solution for \( a \) and \( b \)
     \end{itemize}
     
 \end{enumerate}
+
+\subsection{Pros and cons of using the least squares method for function approximation}
+
+\textsc{Pros}
+\begin{itemize}
+	\item Simplicity: It is very easy to explain and to understand,
+	\item For cases where the general shape of the function is known e.g. when 
+	we know the function we are looking for should be roughly parabolic, it gives
+	us the best fitting function,
+	\item It's not very computationally complex.
+\end{itemize}
+
+\textsc{Cons}
+\begin{itemize}
+	\item The function is not guaranteed to go exactly through any of the points
+		in the dataset,
+	\item Sensitivity to outliers -- points that don't follow the trend as well
+		as the rest.
+\end{itemize}
 
 \section{Summary}
 
